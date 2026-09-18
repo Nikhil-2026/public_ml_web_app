@@ -1,86 +1,91 @@
-Multiple Disease Prediction System
+# Multiple Disease Prediction System
 
-About the Project
+## About the Project
 
-This project is a Multiple Disease Prediction System built using Python and Streamlit. It uses machine learning models to predict the possibility of Diabetes, Heart Disease, and Parkinson's Disease based on the information entered by the user.
+This project is a **Multiple Disease Prediction System** built using Python and Streamlit. It uses machine learning models to predict the possibility of **Diabetes, Heart Disease, and Parkinson's Disease** based on the information entered by the user.
 
 I created this project to understand how trained machine learning models can be connected to a simple web application and used to make predictions from new input data.
-Diseases Covered
-1. Diabetes Prediction
+
+## Diseases Covered
+
+### 1. Diabetes Prediction
 
 The Diabetes Prediction section takes the following inputs:
 
-Number of Pregnancies
-Glucose Level
-Blood Pressure
-Skin Thickness
-Insulin
-BMI
-Diabetes Pedigree Function
-Age
+* Number of Pregnancies
+* Glucose Level
+* Blood Pressure
+* Skin Thickness
+* Insulin
+* BMI
+* Diabetes Pedigree Function
+* Age
 
 The entered values are given to the trained diabetes prediction model and the result is displayed on the application.
 
-2. Heart Disease Prediction
+### 2. Heart Disease Prediction
 
 The Heart Disease section takes inputs such as:
 
-Age
-Sex
-Chest Pain Type
-Resting Blood Pressure
-Cholesterol
-Fasting Blood Sugar
-Resting ECG
-Maximum Heart Rate
-Exercise Induced Angina
-ST Depression
-Slope
-Number of Major Vessels
-Thalassemia
+* Age
+* Sex
+* Chest Pain Type
+* Resting Blood Pressure
+* Cholesterol
+* Fasting Blood Sugar
+* Resting ECG
+* Maximum Heart Rate
+* Exercise Induced Angina
+* ST Depression
+* Slope
+* Number of Major Vessels
+* Thalassemia
 
 These values are passed to the trained heart disease model to generate the prediction.
 
-3. Parkinson's Disease Prediction
+### 3. Parkinson's Disease Prediction
 
 The Parkinson's section uses different voice-related features from the Parkinson's dataset, including:
 
-MDVP
-MDVP
-MDVP
-Jitter
-RAP
-PPQ
-DDP
-Shimmer
-Shimmer dB
-APQ3
-APQ5
-APQ
-DDA
-NHR
-HNR
-RPDE
-DFA
-spread1
-spread2
-D2
-PPE
+* MDVP:Fo
+* MDVP:Fhi
+* MDVP:Flo
+* Jitter
+* RAP
+* PPQ
+* DDP
+* Shimmer
+* Shimmer dB
+* APQ3
+* APQ5
+* APQ
+* DDA
+* NHR
+* HNR
+* RPDE
+* DFA
+* spread1
+* spread2
+* D2
+* PPE
 
 The trained Parkinson's model uses these values to generate the prediction.
 
-Technologies Used
-Python – Main programming language
-Streamlit – Used to create the web application
-Scikit-learn – Used for machine learning
-Pandas – Used for data handling
-NumPy – Used for numerical operations
-Pickle – Used to save and load trained models
-Streamlit Option Menu – Used for sidebar navigation
-Application Workflow
+## Technologies Used
+
+* **Python** – Main programming language
+* **Streamlit** – Used to create the web application
+* **Scikit-learn** – Used for machine learning
+* **Pandas** – Used for data handling
+* **NumPy** – Used for numerical operations
+* **Pickle** – Used to save and load trained models
+* **Streamlit Option Menu** – Used for sidebar navigation
+
+## Application Workflow
 
 The basic workflow of the application is:
 
+```text
 User
   ↓
 Open Streamlit Application
@@ -96,7 +101,11 @@ Pass Input to Model
 Generate Prediction
   ↓
 Display Result
-Project Structure
+```
+
+## Project Structure
+
+```text
 public_ml_web_app/
 │
 ├── multiple_model_prediction_system.py
@@ -106,77 +115,91 @@ public_ml_web_app/
 ├── parkinsons_model.sav
 │
 └── README.md
-Python File
+```
 
-multiple_model_prediction_system.py
+### Python File
+
+`multiple_model_prediction_system.py`
 
 This is the main application file. It contains the Streamlit interface, input fields, navigation menu, model loading, and prediction logic.
 
-Model Files
+### Model Files
 
-The .sav files contain the trained machine learning models used for making predictions.
+The `.sav` files contain the trained machine learning models used for making predictions.
 
+```text
 trained_model.sav
 heart_diseases.sav
 parkinsons_model.sav
-Installation
+```
+
+## Installation
 
 Make sure Python is installed on your system.
 
 Install the required packages:
 
+```bash
 python -m pip install streamlit
 python -m pip install streamlit-option-menu
 python -m pip install pandas
 python -m pip install numpy
 python -m pip install scikit-learn
-Running the Application
+```
+
+## Running the Application
 
 Open the terminal inside the project folder and run:
 
+```bash
 python -m streamlit run multiple_model_prediction_system.py
+```
 
 After running the command, Streamlit will start the application locally and provide a link to open it in the browser.
 
-Machine Learning Part
+## Machine Learning Part
 
 The models used in this application were trained separately using disease-specific datasets.
 
-After training, the models were saved as .sav files using Python's Pickle module.
+After training, the models were saved as `.sav` files using Python's Pickle module.
 
 The Streamlit application loads these saved models:
 
+```python
 pickle.load(open("trained_model.sav", "rb"))
+```
 
-The user's input is then passed to the corresponding model using the predict() method.
+The user's input is then passed to the corresponding model using the `predict()` method.
 
-What I Learned
+## What I Learned
 
 While working on this project, I learned:
 
-How classification models can be used for prediction.
-How to work with different machine learning datasets.
-How to save trained models using Pickle.
-How to load saved models into another Python program.
-How to create input fields using Streamlit.
-How to create navigation using Streamlit Option Menu.
-How to connect user input with a trained machine learning model.
-How to run a machine learning application locally.
-How to upload and maintain a project using GitHub.
-Future Improvements
+* How classification models can be used for prediction.
+* How to work with different machine learning datasets.
+* How to save trained models using Pickle.
+* How to load saved models into another Python program.
+* How to create input fields using Streamlit.
+* How to create navigation using Streamlit Option Menu.
+* How to connect user input with a trained machine learning model.
+* How to run a machine learning application locally.
+* How to upload and maintain a project using GitHub.
+
+## Future Improvements
 
 Some improvements I can add to this project in the future are:
 
-Add input validation.
-Use numerical input fields instead of text fields.
-Display prediction probability.
-Improve the user interface.
-Add model accuracy information.
-Add data visualizations.
-Add more disease prediction models.
-Deploy the application online.
-Disclaimer
+* Add input validation.
+* Use numerical input fields instead of text fields.
+* Display prediction probability.
+* Improve the user interface.
+* Add model accuracy information.
+* Add data visualizations.
+* Add more disease prediction models.
+* Deploy the application online.
 
-This project is created for educational purposes and to demonstrate the use of machine learning models in a web application.
+## Disclaimer
+
+This project is created for **educational purposes** and to demonstrate the use of machine learning models in a web application.
 
 The predictions generated by this application should not be considered a medical diagnosis or a replacement for professional medical advice.
